@@ -1,7 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
 
-import Grid  from 'react-bootstrap/lib/Grid'
 import Navbar from 'react-bootstrap/lib/Navbar'
 import Nav from 'react-bootstrap/es/Nav'
 import NavItem from 'react-bootstrap/es/NavItem'
@@ -24,7 +22,7 @@ export default class Header extends React.Component {
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
-                <Nav>
+                <Nav bsStyle="tabs">
                     <NavItem eventKey={1} href="/lab1">
                         Первая
                     </NavItem>
