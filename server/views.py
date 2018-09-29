@@ -9,3 +9,7 @@ blueprint = Blueprint('blueprint', __name__,
 @blueprint.route('/<path:path>')
 def index(path):
     return render_template('index.html')
+
+@blueprint.route('/lab1/process', methods=['POST'])
+def process():
+    return "Hello!"
