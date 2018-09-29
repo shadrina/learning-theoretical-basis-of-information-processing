@@ -43,7 +43,7 @@ export default class Lab1 extends React.Component {
 
     render() {
         return (
-            <Grid>
+            <div>
                 <PageHeader>
                     Лабораторная работа #1{' '}
                     <Label>done</Label>
@@ -73,7 +73,7 @@ export default class Lab1 extends React.Component {
                         {this.state.result}
                     </Panel.Body>
                 </Panel>
-            </Grid>
+            </div>
         )
     }
 }

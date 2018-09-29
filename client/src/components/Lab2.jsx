@@ -5,9 +5,9 @@ import Grid from 'react-bootstrap/lib/Grid'
 export default class Lab2 extends React.Component {
     render() {
         return (
-            <Grid>
+            <div>
                 Coming soon...
-            </Grid>
+            </div>
         )
     }
 }
