@@ -4,7 +4,9 @@ export default class Lab1 extends React.Component {
     render() {
         return (
             <div>
-                Hehe
+                <div>
+                    Hehe
+                </div>
             </div>
         )
     }
