@@ -2,15 +2,14 @@ import React from 'react'
 import axios from 'axios'
 
 import PageHeader from 'react-bootstrap/lib/PageHeader'
-import Grid from 'react-bootstrap/lib/Grid'
 import Panel from 'react-bootstrap/lib/Panel'
 import Label from 'react-bootstrap/lib/Label'
 import ControlLabel from 'react-bootstrap/lib/ControlLabel'
 import Button from 'react-bootstrap/lib/Button'
-import FormGroup from "react-bootstrap/lib/FormGroup";
-import FormControl from "react-bootstrap/lib/FormControl";
-import HelpBlock from "react-bootstrap/lib/HelpBlock";
-
+import FormGroup from 'react-bootstrap/lib/FormGroup'
+import FormControl from 'react-bootstrap/lib/FormControl'
+import HelpBlock from 'react-bootstrap/lib/HelpBlock'
+import ListGroup from 'react-bootstrap/lib/ListGroup'
 
 export default class Lab1 extends React.Component {
     constructor(props) {
@@ -33,12 +32,22 @@ export default class Lab1 extends React.Component {
     handleRequest() {
         let formData = new FormData();
         formData.append("file", this.state.file);
-        axios.post("/lab1/process", formData)
-            .then(response =>
-                this.setState({
-                    result: response.data
-                })
+        axios.post("/lab1/process", formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }})
+            .then(response => {
+                    this.setState({
+                        result: response.data.map(item => (
+                            <li className="list-group-item" onClick={() => {}}>
+                                {item}
+                            </li>
+                        ))
+                    });
+                    console.log(response.data)
+                }
             )
+            .catch(error => console.log(error))
     }
 
     render() {
@@ -70,7 +79,11 @@ export default class Lab1 extends React.Component {
                         <Button onClick={this.handleRequest}>
                             Сравнить
                         </Button>
-                        {this.state.result}
+                    </Panel.Body>
+                    <Panel.Body>
+                        <ListGroup componentClass="ul">
+                            {this.state.result}
+                        </ListGroup>
                     </Panel.Body>
                 </Panel>
             </div>
