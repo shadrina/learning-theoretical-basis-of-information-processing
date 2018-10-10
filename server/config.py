@@ -1,1 +1,2 @@
-UPLOAD_FOLDER = "tmp\\csv"
+UPLOAD_FOLDER = "tmp\\"
+UPLOAD_CSV_FOLDER = UPLOAD_FOLDER + "csv\\"

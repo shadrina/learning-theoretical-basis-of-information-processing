@@ -1,5 +1,5 @@
 {
-  "name": "tooi-lab-1",
+  "name": "tooi-labs",
   "version": "1.0.0",
   "description": "Homework",
   "main": "index.js",
@@ -43,7 +43,6 @@
     "ajv": "^6.0.0",
     "react-d3-tree": "^1.11.0",
     "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "react-tree-graph": "^3.2.0"
+    "react-router-dom": "^4.3.1"
   }
 }

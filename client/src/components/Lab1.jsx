@@ -81,7 +81,7 @@ export default class Lab1 extends React.Component {
                         </Button>
                     </Panel.Body>
                     <Panel.Body>
-                        <ControlLabel>Результат:</ControlLabel>
+                        {this.state.result === null ? [] : (<ControlLabel>Результат:</ControlLabel>)}
                         <ListGroup componentClass="ul">
                             {this.state.result}
                         </ListGroup>

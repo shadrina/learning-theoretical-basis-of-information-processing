@@ -3,7 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 
 from engine import compare_csv, produce_json_from_xml, find_string_by_number
-from config import UPLOAD_FOLDER
+from config import UPLOAD_FOLDER, UPLOAD_CSV_FOLDER
 
 blueprint = Blueprint('blueprint', __name__,
                       static_folder="../client/dist",
@@ -21,12 +21,12 @@ def process():
     except:
         file = None
     if file:
-        if not os.path.exists(UPLOAD_FOLDER):
-            os.makedirs(UPLOAD_FOLDER)
-        absolute_file = os.path.abspath(UPLOAD_FOLDER + file.filename)
+        if not os.path.exists(UPLOAD_CSV_FOLDER):
+            os.makedirs(UPLOAD_CSV_FOLDER)
+        absolute_file = os.path.abspath(UPLOAD_CSV_FOLDER + file.filename)
         filename = secure_filename(absolute_file)
-        file.save(os.path.join(UPLOAD_FOLDER, filename))
-        return compare_csv(UPLOAD_FOLDER + "\\" + filename)
+        file.save(os.path.join(UPLOAD_CSV_FOLDER, filename))
+        return compare_csv(UPLOAD_CSV_FOLDER + "\\" + filename)
     else:
         return "Empty file", 400
 

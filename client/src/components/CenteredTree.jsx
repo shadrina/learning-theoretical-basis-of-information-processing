@@ -1,5 +1,5 @@
-import React from "react";
-import Tree from "react-d3-tree";
+import React from 'react'
+import Tree from 'react-d3-tree'
 
 const containerStyles = {
     width: '100%',
