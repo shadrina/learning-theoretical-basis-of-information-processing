@@ -1,6 +1,19 @@
 from Levenshtein import *
-import json
-import csv
+import json, xmltodict, csv
+
+def find_string_by_number(filename, number):
+    with open(filename) as f:
+        content = f.readlines()
+    content = [x.strip() for x in content]
+    length = len(content)
+    if number >= length:
+        return "File contains only " + str(length) + " lines :(", 200
+    else:
+        return content[number], 200
+
+def produce_json_from_xml(xml):
+    o = xmltodict.parse(xml)
+    return json.dumps(o), 200
 
 def compare_csv(filename):
     result = list()

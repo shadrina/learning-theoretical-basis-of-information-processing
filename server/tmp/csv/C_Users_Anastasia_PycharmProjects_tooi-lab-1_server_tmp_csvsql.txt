@@ -1,0 +1,4 @@
+asm("rdtsc\n":"=a"(start.t32.th), "=d"(start.t32.tl));
+// ...
+asm("rdtsc\n":"=a"(end.t32.th), "=d"(end.t32.tl));
+printf("CPU cycles taken for one operation: %f\n", (end.t64 - start.t64) * 1.0 / ARRSZ);
